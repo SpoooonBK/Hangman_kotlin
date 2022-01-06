@@ -77,14 +77,9 @@ class HangmanGraphics {
     )
 
     fun hideWordGraphic(word: String): String {
-
-        val sb = StringBuilder()
-
-        for (i in word.indices) {
-            sb.append("_")
-        }
-
-        return sb.toString()
+        return buildString { for (i in word.indices) {
+            this.append("_")
+        } }
     }
 
     fun revealWordGraphic(char: Char, word: String, hiddenWord: String) : String{
